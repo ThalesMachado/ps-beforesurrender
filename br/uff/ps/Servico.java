@@ -25,21 +25,67 @@ public class Servico {
 		this.tipoServico = tipoServico;
 	}
 	
-	public void criarPasseioTuristico() {
-		PasseioTuristico passeio = new PasseioTuristico();
-		passeioTuristicos.add(passeio);
+	public void criarItemTipoServico(TipoServico tipo) {
+		
+		if(tipo.equals(tipo.PasseioTuristico)) {
+			PasseioTuristico passeio = new PasseioTuristico();
+			passeioTuristicos.add(passeio);
+		}
+		
+		if(tipo.equals(tipo.Hospedagem)) {
+			Hospedagem hospedagem = new Hospedagem();
+			hospedagens.add(hospedagem);
+		}
+		
+		if(tipo.equals(tipo.PassagemArea)) {
+			PassagemAerea passagem = new PassagemAerea();
+			passagemAereas.add(passagem);
+		}
+		
 	}
 	
-	public void criarPassagemAerea() {
-		PassagemAerea passagem = new PassagemAerea();
-		passagemAereas.add(passagem);
+	public void alterarItemTipoServico(int idItem, TipoServico tipo) {
+		
+		if(tipo.equals(tipo.PasseioTuristico)) {
+			PasseioTuristico passeio = passeioTuristicos.get(idItem);
+		}
+		
+		if(tipo.equals(tipo.Hospedagem)) {
+			Hospedagem hospedagem = hospedagens.get(idItem);
+		}
+		
+		if(tipo.equals(tipo.PassagemArea)) {
+			PassagemAerea passagem = passagemAereas.get(idItem);
+		}
+	} 
+	
+	public void excluirItemTipoServico(int idItem, TipoServico tipo) {
+		if(tipo.equals(tipo.PasseioTuristico)) {
+			passeioTuristicos.remove(idItem);
+		}
+		
+		if(tipo.equals(tipo.Hospedagem)) {
+			hospedagens.remove(idItem);
+		}
+		
+		if(tipo.equals(tipo.PassagemArea)) {
+			passagemAereas.remove(idItem);
+		}
 	}
 	
-	public void criarHospedagens() {
-		Hospedagem hospedagem = new Hospedagem();
-		hospedagens.add(hospedagem);
+	public void listarServicos() {
+		for(PassagemAerea passagem : passagemAereas) {
+			System.out.println(passagem);
+		}
+		
+		for(PasseioTuristico passeio : passeioTuristicos) {
+			System.out.println(passeio);
+		}
+		
+		for(Hospedagem hospedagem : hospedagens) {
+			System.out.println(hospedagem);
+		}
 	}
-	
 
 	public ArrayList<PassagemAerea> getPassagemAereas() {
 		return passagemAereas;

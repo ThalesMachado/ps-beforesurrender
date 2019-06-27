@@ -1,4 +1,5 @@
-package br.uff.ps
+package br.uff.ps;
+
 public class Pagamento {
 	private int idFormaPagamento;
 	private int numeroParcelas;
@@ -18,16 +19,20 @@ public class Pagamento {
 		this.tipoPagamento = formaPagamento;
 	}
 	
-	public void processarTransacao(int idFormaPagamento, int, numeroPercelas) {
+	public void processarTransacao(int idFormaPagamento, int numeroPercelas) {
 		//codigo
 		
 	}
 	
+	//TODO
 	public int formaParcelamento(int idFormaPagamento) {
+		return idFormaPagamento;
 		
 	}
 	
+	//TODO
 	public Compra solicitarInformacoesCompra(int idCompra) {
+		return null;
 		
 	}
 }
